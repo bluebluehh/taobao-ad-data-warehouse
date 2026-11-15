@@ -1,0 +1,8 @@
+{
+  "audience_totals": "passed",
+  "gender_resource_filter": "passed",
+  "chart_rendering_with_real_snapshot": "passed",
+  "empty_and_old_api_handling": "passed",
+  "syntax_and_html_targets": "passed",
+  "browser_visual_acceptance": "not_completed_window_minimized"
+}

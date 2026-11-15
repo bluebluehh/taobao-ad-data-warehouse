@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>淘宝展示广告 · 投放分析</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div class="shell mast"><div><div class="eyebrow">数据仓库课程项目 / 中期原型</div><h1>淘宝展示广告投放分析</h1><p>从曝光到点击，查看广告、人群与投放场景的样本差异。</p></div><div class="badge" id="mode">读取数据中</div></div></header>
+<main class="shell">
+<section class="notice" id="scope">正在连接只读分析服务…</section>
+<form id="filters" class="filters" aria-label="分析范围筛选">
+<label>开始日期<input type="date" name="start" value="2017-05-06" min="2017-05-06" max="2017-05-13"></label>
+<label>结束日期<input type="date" name="end" value="2017-05-13" min="2017-05-06" max="2017-05-13"></label>
+<label>广告展示位置<select name="pid"><option value="">全部展示位置</option></select></label>
+<label>性别<select name="gender"><option value="">全部</option></select></label>
+<label>年龄层级编码<select name="age"><option value="">全部</option></select></label>
+<label>购物深度<select name="shopping"><option value="">全部</option></select></label>
+<button type="submit">应用筛选</button><button type="button" class="secondary" id="reset">重置</button>
+</form>
+<div id="error" role="alert" hidden></div><div id="loading" role="status" aria-live="polite"></div>
+<section id="cards" class="cards" aria-label="投放概览"></section>
+<section class="panel explanation"><h2>如何理解这些名称</h2><p>性别、购物深度、消费档次按已核对的字典显示中文并保留编码。年龄和城市仅显示层级编码，不推断年龄区间或一二线城市。广告计划、广告主、类目、品牌及资源位是匿名标识，可比较同一对象的表现，无法还原真实名称。</p><details><summary>查看字段字典与使用说明</summary><ul><li>性别：1＝男，2＝女。</li><li>购物深度：1＝浅层用户，2＝中度用户，3＝深度用户。</li><li>消费档次：1＝低档，2＝中档，3＝高档；这不是实际消费金额。</li><li>年龄层级、城市层级：具体区间未核实；未匹配画像与属性缺失分别保留。</li><li>广告相关ID：用于定位和关联对象，数字大小不表示表现优劣。</li></ul><p>映射参考：<a href="https://dblab.xmu.edu.cn/blog/5589/" target="_blank" rel="noopener">厦大数据库实验室数据字段说明</a>。未提供映射的值保持原编码。</p></details></section>
+<section class="panel explanation"><h2>当前范围的观察</h2><p>随筛选结果更新；描述样本差异，作为继续分析的线索。</p><div id="findings" class="findings"></div></section>
+<div class="grid">
+<section class="panel wide"><div class="panel-head"><div><h2>日期趋势</h2><p>曝光规模与点击率；每天的CTR独立计算。</p></div><div class="legend"><span class="dot cyan"></span>曝光 <span class="dot orange"></span>点击率</div></div><div id="trend" class="chart"></div></section>
+<section class="panel"><h2>广告展示位置表现</h2><p>同一筛选范围内比较；位置以匿名ID区分，不代表已知页面名称。</p><div id="resources" class="bars"></div></section>
+<section class="panel"><h2>不同年龄层级的点击表现</h2><p>保留未匹配画像和属性缺失群体。</p><div id="audience" class="bars"></div></section>
+<section class="panel wide"><h2>可解释人群的曝光与点击率</h2><p>青色条比较曝光次数，橙色点比较点击率，两者使用独立刻度；悬停查看明细。未关联画像与属性缺失单独保留，不能当作已知人群。</p><div class="audience-grid"><div><h3>性别</h3><div id="gender-chart" class="chart"></div></div><div><h3>购物深度</h3><div id="shopping-chart" class="chart"></div></div><div><h3>消费档次</h3><div id="pvalue-chart" class="chart"></div></div></div></section>
+<section class="panel wide"><h2>小时分布</h2><p>所选日期内同一小时合计，分析时区UTC+08:00。</p><div id="hours" class="chart small"></div></section>
+</div>
+<section class="panel ranking"><div class="panel-head"><div><h2>广告与人群排行</h2><p>广告对象按匿名ID定位；最多展示20组；贡献率分母为截取排行前的当前范围总量。</p></div><button class="secondary" id="export" type="button">导出当前排行</button></div>
+<div class="rank-controls"><label>分析维度<select name="group" form="filters" id="rank-group"><option value="campaign">广告计划ID（匿名）</option><option value="advertiser">广告主ID（匿名）</option><option value="category">商品类目ID（匿名）</option><option value="brand">品牌ID（匿名）</option><option value="ad">广告单元ID（匿名）</option><option value="age">年龄层次</option><option value="gender">性别</option><option value="shopping">购物深度</option><option value="pvalue">消费档次</option><option value="city">城市层级编码（映射未核实）</option></select></label><label>排序<select name="order" form="filters" id="rank-order"><option value="clicks">点击量</option><option value="ctr">点击率</option></select></label><label>点击率排行最低曝光次数<input name="minimum" form="filters" type="number" min="0" value="1000" id="rank-min"></label><span>门槛可调，不代表统计显著性。</span></div><div class="grid chart-pair"><div><h3>当前排行前10组</h3><p>按所选指标排序；只展示当前排名靠前的对象。</p><div id="rank-chart"></div></div><div><h3>曝光量 × 点击率</h3><p>仅包含当前排行返回的最多20组，不代表全部对象；橙色虚线为当前范围整体点击率。悬停查看对象与样本量。</p><div id="scatter" class="chart"></div></div></div><details class="details-table"><summary>展开排行明细与原始ID</summary><div id="ranking" class="table-wrap"></div></details></section>
+<div class="grid bottom"><section class="panel"><h2>资源位 × 年龄层次</h2><p>交叉分析响应差异；每格同时展示点击率和曝光量。</p><div id="heatmap" class="table-wrap"></div><details class="details-table"><summary>展开交叉明细表</summary><div id="cross" class="table-wrap"></div></details></section>
+<section class="panel"><h2>数据质量</h2><p id="quality-note">覆盖率在画像筛选前计算。</p><div id="coverage-chart"></div><div id="quality"></div></section></div>
+<footer><strong>分析边界</strong> 本页为2017年历史样本，不代表淘宝全平台。商品价格不是广告费用；未计算CPC、ROI或广告购买转化。群体与计划间差异不证明因果关系。<div id="built"></div></footer>
+</main><script src="/app.js"></script></body></html>

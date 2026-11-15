@@ -1,0 +1,27 @@
+# Track only reviewed project deliverables at repository root.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/docs/
+!/warehouse/
+!/sql/
+!/web/
+!/scripts/
+!/tests/
+!/examples/
+__pycache__/
+*.py[cod]
+*.sqlite*
+*.db
+*.csv
+*.zip
+*.tar
+*.gz
+*.log
+.env
+.env.*
+*.pem
+*.key
+node_modules/
+.venv/

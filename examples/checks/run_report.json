@@ -1,0 +1,504 @@
+{
+  "at": "2026-11-15T07:11:20+08:00",
+  "config": {
+    "rate": 0.02,
+    "seed": "dw2026-midterm",
+    "schema_version": "midterm-1",
+    "program_hash": "3f1f2984950a13524bb313a6d9d813de2649ae313bc124968e8bbd690c7277cb",
+    "sources": {
+      "raw_sample": {
+        "path": "[LOCAL_PATH]",
+        "bytes": 1088060964,
+        "mtime_ns": 1496887756000000000
+      },
+      "ad_feature": {
+        "path": "[LOCAL_PATH]",
+        "bytes": 31286431,
+        "mtime_ns": 1496889385000000000
+      },
+      "user_profile": {
+        "path": "[LOCAL_PATH]",
+        "bytes": 24056588,
+        "mtime_ns": 1496598870000000000
+      }
+    }
+  },
+  "meta": {
+    "created_at": "2026-11-15T07:10:20+08:00",
+    "mode": "development_sample",
+    "sample_rate": 0.02,
+    "sample_seed": "dw2026-midterm",
+    "sampling": "keyed BLAKE2b-64 on each exact source line, unsigned digest below rate*2^64",
+    "source_rows_scanned": 26557961,
+    "source_selected_rows": 530224,
+    "timezone": "UTC+08:00",
+    "start_date": "2017-05-06",
+    "end_date": "2017-05-13",
+    "scope": "Three core tables only; no behavior_log import; original files unchanged"
+  },
+  "source_inventory": [
+    {
+      "name": "ad_feature",
+      "path": "[LOCAL_PATH]",
+      "sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745",
+      "rows": 846811,
+      "bytes": 31286431,
+      "original_header": "[\"adgroup_id\", \"cate_id\", \"campaign_id\", \"customer\", \"brand\", \"price\"]"
+    },
+    {
+      "name": "user_profile",
+      "path": "[LOCAL_PATH]",
+      "sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532",
+      "rows": 1061768,
+      "bytes": 24056588,
+      "original_header": "[\"userid\", \"cms_segid\", \"cms_group_id\", \"final_gender_code\", \"age_level\", \"pvalue_level\", \"shopping_level\", \"occupation\", \"new_user_class_level \"]"
+    },
+    {
+      "name": "raw_sample",
+      "path": "[LOCAL_PATH]",
+      "sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d",
+      "rows": 26557961,
+      "bytes": 1088060964,
+      "original_header": "[\"user\", \"time_stamp\", \"adgroup_id\", \"pid\", \"nonclk\", \"clk\"]"
+    }
+  ],
+  "independent_source_sample": {
+    "source_rows": 26557961,
+    "selected_rows": 530224,
+    "valid_rows": 530224,
+    "clicks": 27258,
+    "daily": {
+      "2017-05-06": 65373,
+      "2017-05-13": 65824,
+      "2017-05-07": 68430,
+      "2017-05-08": 66525,
+      "2017-05-10": 66745,
+      "2017-05-11": 67553,
+      "2017-05-12": 64940,
+      "2017-05-09": 64834
+    },
+    "resources": {
+      "430539_1007": 201885,
+      "430548_1007": 328339
+    },
+    "reached_users": 273340,
+    "clicked_users": 25502,
+    "exposed_ads": 173840,
+    "rejected_rows": 0
+  },
+  "metrics": {
+    "impressions": 530224,
+    "clicks": 27258,
+    "reached_users": 273340,
+    "clicked_users": 25502,
+    "exposed_ads": 173840,
+    "matched_profile_rows": 500100,
+    "matched_profile_users": 257025,
+    "matched_ad_rows": 530224,
+    "missing_pvalue_rows": 260787,
+    "missing_city_rows": 134148,
+    "ctr": 0.051408461329551285,
+    "user_click_rate": 0.09329772444574523,
+    "avg_impressions_per_user": 1.939796590327065,
+    "profile_row_coverage": 0.9431862759890159,
+    "profile_user_coverage": 0.9403124314041121,
+    "ad_row_coverage": 1.0,
+    "pvalue_missing_rate": 0.5214697060587883,
+    "city_missing_rate": 0.26824235152969406
+  },
+  "checks": [
+    {
+      "check": "Independent source vs DWD: impressions",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "Independent source vs DWD: clicks",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "Independent source vs DWD: reached_users",
+      "actual": 273340,
+      "expected": 273340,
+      "passed": true
+    },
+    {
+      "check": "Independent source vs DWD: clicked_users",
+      "actual": 25502,
+      "expected": 25502,
+      "passed": true
+    },
+    {
+      "check": "Independent source vs DWD: exposed_ads",
+      "actual": 173840,
+      "expected": 173840,
+      "passed": true
+    },
+    {
+      "check": "Selected = valid + rejected",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "Eight dates in development sample",
+      "actual": 8,
+      "expected": 8,
+      "passed": true
+    },
+    {
+      "check": "Foreign key violations",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "Fact to detail join row preservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_daily exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_daily click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "dws_resource_daily exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_resource_daily click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "dws_hourly exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_hourly click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "dws_ad_daily exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_ad_daily click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "dws_audience_daily exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "dws_audience_daily click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "ads_daily exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "ads_daily click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "ads_resource exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "ads_resource click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "ads_campaign exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "ads_campaign click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "ads_gender exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "ads_gender click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "ads_cross_age_resource exposure conservation",
+      "actual": 530224,
+      "expected": 530224,
+      "passed": true
+    },
+    {
+      "check": "ads_cross_age_resource click conservation",
+      "actual": 27258,
+      "expected": 27258,
+      "passed": true
+    },
+    {
+      "check": "Daily counts vs independent Python source counter",
+      "actual": {
+        "2017-05-06": 65373,
+        "2017-05-07": 68430,
+        "2017-05-08": 66525,
+        "2017-05-09": 64834,
+        "2017-05-10": 66745,
+        "2017-05-11": 67553,
+        "2017-05-12": 64940,
+        "2017-05-13": 65824
+      },
+      "expected": {
+        "2017-05-06": 65373,
+        "2017-05-13": 65824,
+        "2017-05-07": 68430,
+        "2017-05-08": 66525,
+        "2017-05-10": 66745,
+        "2017-05-11": 67553,
+        "2017-05-12": 64940,
+        "2017-05-09": 64834
+      },
+      "passed": true
+    },
+    {
+      "check": "Empty scope count",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "Empty scope CTR undefined",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "check": "Source lineage unique",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "Filtered exposure totals {'start': '2017-05-06', 'end': '2017-05-06'}",
+      "actual": 65373,
+      "expected": 65373,
+      "passed": true
+    },
+    {
+      "check": "Filtered click totals {'start': '2017-05-06', 'end': '2017-05-06'}",
+      "actual": 3456,
+      "expected": 3456,
+      "passed": true
+    },
+    {
+      "check": "Top N contribution denominator {'start': '2017-05-06', 'end': '2017-05-06'}",
+      "actual": 0.005216220763923944,
+      "expected": 0.005216220763923944,
+      "passed": true
+    },
+    {
+      "check": "Filtered exposure totals {'pid': '430539_1007'}",
+      "actual": 201885,
+      "expected": 201885,
+      "passed": true
+    },
+    {
+      "check": "Filtered click totals {'pid': '430539_1007'}",
+      "actual": 10705,
+      "expected": 10705,
+      "passed": true
+    },
+    {
+      "check": "Top N contribution denominator {'pid': '430539_1007'}",
+      "actual": 0.004893875225994997,
+      "expected": 0.004893875225994997,
+      "passed": true
+    },
+    {
+      "check": "Filtered exposure totals {'gender': '__unmatched__'}",
+      "actual": 30124,
+      "expected": 30124,
+      "passed": true
+    },
+    {
+      "check": "Filtered click totals {'gender': '__unmatched__'}",
+      "actual": 1592,
+      "expected": 1592,
+      "passed": true
+    },
+    {
+      "check": "Top N contribution denominator {'gender': '__unmatched__'}",
+      "actual": 0.003087239410436861,
+      "expected": 0.003087239410436861,
+      "passed": true
+    },
+    {
+      "check": "Filtered exposure totals {'gender': '1'}",
+      "actual": 137339,
+      "expected": 137339,
+      "passed": true
+    },
+    {
+      "check": "Filtered click totals {'gender': '1'}",
+      "actual": 6705,
+      "expected": 6705,
+      "passed": true
+    },
+    {
+      "check": "Top N contribution denominator {'gender': '1'}",
+      "actual": 0.0023445634524789025,
+      "expected": 0.0023445634524789025,
+      "passed": true
+    }
+  ],
+  "checks_passed": true,
+  "elapsed_seconds": 201.96,
+  "tables": [
+    {
+      "name": "ads_campaign",
+      "type": "table"
+    },
+    {
+      "name": "ads_cross_age_resource",
+      "type": "table"
+    },
+    {
+      "name": "ads_daily",
+      "type": "table"
+    },
+    {
+      "name": "ads_gender",
+      "type": "table"
+    },
+    {
+      "name": "ads_overview",
+      "type": "table"
+    },
+    {
+      "name": "ads_resource",
+      "type": "table"
+    },
+    {
+      "name": "dim_ad",
+      "type": "table"
+    },
+    {
+      "name": "dim_date",
+      "type": "table"
+    },
+    {
+      "name": "dim_hour",
+      "type": "table"
+    },
+    {
+      "name": "dim_resource",
+      "type": "table"
+    },
+    {
+      "name": "dim_user",
+      "type": "table"
+    },
+    {
+      "name": "dwd_exposure",
+      "type": "table"
+    },
+    {
+      "name": "dws_ad_daily",
+      "type": "table"
+    },
+    {
+      "name": "dws_audience_daily",
+      "type": "table"
+    },
+    {
+      "name": "dws_daily",
+      "type": "table"
+    },
+    {
+      "name": "dws_hourly",
+      "type": "table"
+    },
+    {
+      "name": "dws_resource_daily",
+      "type": "table"
+    },
+    {
+      "name": "ods_ad",
+      "type": "table"
+    },
+    {
+      "name": "ods_exposure",
+      "type": "table"
+    },
+    {
+      "name": "ods_reject",
+      "type": "table"
+    },
+    {
+      "name": "ods_user",
+      "type": "table"
+    },
+    {
+      "name": "run_info",
+      "type": "table"
+    },
+    {
+      "name": "source_inventory",
+      "type": "table"
+    },
+    {
+      "name": "sqlite_stat1",
+      "type": "table"
+    },
+    {
+      "name": "v_exposure_detail",
+      "type": "view"
+    }
+  ],
+  "database_bytes": 275886080
+}

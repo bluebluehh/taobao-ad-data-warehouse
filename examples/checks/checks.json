@@ -1,0 +1,290 @@
+[
+  {
+    "check": "Independent source vs DWD: impressions",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "Independent source vs DWD: clicks",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "Independent source vs DWD: reached_users",
+    "actual": 273340,
+    "expected": 273340,
+    "passed": true
+  },
+  {
+    "check": "Independent source vs DWD: clicked_users",
+    "actual": 25502,
+    "expected": 25502,
+    "passed": true
+  },
+  {
+    "check": "Independent source vs DWD: exposed_ads",
+    "actual": 173840,
+    "expected": 173840,
+    "passed": true
+  },
+  {
+    "check": "Selected = valid + rejected",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "Eight dates in development sample",
+    "actual": 8,
+    "expected": 8,
+    "passed": true
+  },
+  {
+    "check": "Foreign key violations",
+    "actual": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "check": "Fact to detail join row preservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_daily exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_daily click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "dws_resource_daily exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_resource_daily click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "dws_hourly exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_hourly click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "dws_ad_daily exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_ad_daily click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "dws_audience_daily exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "dws_audience_daily click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "ads_daily exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "ads_daily click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "ads_resource exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "ads_resource click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "ads_campaign exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "ads_campaign click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "ads_gender exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "ads_gender click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "ads_cross_age_resource exposure conservation",
+    "actual": 530224,
+    "expected": 530224,
+    "passed": true
+  },
+  {
+    "check": "ads_cross_age_resource click conservation",
+    "actual": 27258,
+    "expected": 27258,
+    "passed": true
+  },
+  {
+    "check": "Daily counts vs independent Python source counter",
+    "actual": {
+      "2017-05-06": 65373,
+      "2017-05-07": 68430,
+      "2017-05-08": 66525,
+      "2017-05-09": 64834,
+      "2017-05-10": 66745,
+      "2017-05-11": 67553,
+      "2017-05-12": 64940,
+      "2017-05-13": 65824
+    },
+    "expected": {
+      "2017-05-06": 65373,
+      "2017-05-13": 65824,
+      "2017-05-07": 68430,
+      "2017-05-08": 66525,
+      "2017-05-10": 66745,
+      "2017-05-11": 67553,
+      "2017-05-12": 64940,
+      "2017-05-09": 64834
+    },
+    "passed": true
+  },
+  {
+    "check": "Empty scope count",
+    "actual": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "check": "Empty scope CTR undefined",
+    "actual": null,
+    "expected": null,
+    "passed": true
+  },
+  {
+    "check": "Source lineage unique",
+    "actual": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "check": "Filtered exposure totals {'start': '2017-05-06', 'end': '2017-05-06'}",
+    "actual": 65373,
+    "expected": 65373,
+    "passed": true
+  },
+  {
+    "check": "Filtered click totals {'start': '2017-05-06', 'end': '2017-05-06'}",
+    "actual": 3456,
+    "expected": 3456,
+    "passed": true
+  },
+  {
+    "check": "Top N contribution denominator {'start': '2017-05-06', 'end': '2017-05-06'}",
+    "actual": 0.005216220763923944,
+    "expected": 0.005216220763923944,
+    "passed": true
+  },
+  {
+    "check": "Filtered exposure totals {'pid': '430539_1007'}",
+    "actual": 201885,
+    "expected": 201885,
+    "passed": true
+  },
+  {
+    "check": "Filtered click totals {'pid': '430539_1007'}",
+    "actual": 10705,
+    "expected": 10705,
+    "passed": true
+  },
+  {
+    "check": "Top N contribution denominator {'pid': '430539_1007'}",
+    "actual": 0.004893875225994997,
+    "expected": 0.004893875225994997,
+    "passed": true
+  },
+  {
+    "check": "Filtered exposure totals {'gender': '__unmatched__'}",
+    "actual": 30124,
+    "expected": 30124,
+    "passed": true
+  },
+  {
+    "check": "Filtered click totals {'gender': '__unmatched__'}",
+    "actual": 1592,
+    "expected": 1592,
+    "passed": true
+  },
+  {
+    "check": "Top N contribution denominator {'gender': '__unmatched__'}",
+    "actual": 0.003087239410436861,
+    "expected": 0.003087239410436861,
+    "passed": true
+  },
+  {
+    "check": "Filtered exposure totals {'gender': '1'}",
+    "actual": 137339,
+    "expected": 137339,
+    "passed": true
+  },
+  {
+    "check": "Filtered click totals {'gender': '1'}",
+    "actual": 6705,
+    "expected": 6705,
+    "passed": true
+  },
+  {
+    "check": "Top N contribution denominator {'gender': '1'}",
+    "actual": 0.0023445634524789025,
+    "expected": 0.0023445634524789025,
+    "passed": true
+  }
+]

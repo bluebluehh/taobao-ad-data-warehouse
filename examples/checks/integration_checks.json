@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-15T08:55:44+08:00",
+  "checks": [
+    {
+      "check": "Deterministic rebuild produces identical metric counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Source hashes unchanged after rebuild",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Date filter changes scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Cross-day UV is not sum of daily UV",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Unmatched users retained and separately identifiable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "All-unmatched attribute missing rate is undefined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Quality scope ignores profile filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Real zero-click group: CTR zero, not missing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Zero-click contribution denominator returns null",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "CTR rank enforces exposure eligibility",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "CTR rank uses unrounded ratios",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Query value is bound, not SQL-injected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Direct query-service bundle matches source scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Direct query service includes all result panels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Temporary query tables cleaned after service call",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Read-only connection rejects warehouse writes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Service rejects invalid parameters {'group': ['bad']}",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Service rejects invalid parameters {'start': ['2017-05-08'], 'end': ['2017-05-06']}",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Service rejects invalid parameters {'minimum': ['-1']}",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Service rejects invalid parameters {'unknown': ['1']}",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "http_measurements": [],
+  "passed": true,
+  "http_status": "blocked",
+  "http_blocker": "PermissionError(13, '以一种访问权限不允许的方式做了一个访问套接字的尝试。', None, 10013, None)",
+  "direct_query_service_seconds": 2.696,
+  "visual_browser_check": "Not completed: browser provider session failed; no screenshot inspection claimed."
+}

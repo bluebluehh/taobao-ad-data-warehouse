@@ -24,14 +24,16 @@ if errorlevel 1 goto :failed
 git diff --cached --check
 if errorlevel 1 goto :failed
 echo.
-git diff --cached --stat
+git --no-pager diff --cached --stat
 echo.
 git diff --cached --quiet
 if not errorlevel 1 goto :push
 git -c user.name=bluebluehh -c user.email=219071822+bluebluehh@users.noreply.github.com commit -m "feat: publish reproducible Taobao ad warehouse and visual dashboard"
 if errorlevel 1 goto :failed
 :push
-git push -u origin main
+echo Uploading commit to GitHub. If sign-in opens, complete the normal GitHub login.
+echo Network stalls will stop after about 45 seconds of very low transfer speed.
+git -c http.lowSpeedLimit=1 -c http.lowSpeedTime=45 push --progress -u origin main
 if errorlevel 1 goto :failed
 echo.
 echo SUCCESS: https://github.com/bluebluehh/taobao-ad-data-warehouse

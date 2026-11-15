@@ -150,7 +150,7 @@ function cross(rows){
 function render(d){
  current=d;const o=d.overview,q=d.quality,m=d.meta;
  el('mode').textContent=m.mode==='full'?'全量版本':'开发样本 · '+(m.sample_rate*100).toFixed(0)+'%目标抽样';
- el('scope').textContent=`业务日期 ${m.start_date}—${m.end_date} · ${m.timezone} · 固定种子 ${m.sample_seed}。本版保留 ${n(m.source_selected_rows)} 条源记录；当前筛选 ${n(o.impressions)} 次有效曝光。${window.STATIC_SNAPSHOT?'当前为静态结果预览，筛选需启动本地分析服务。':''}`;
+ el('scope').textContent=`业务日期 ${m.start_date}—${m.end_date} · ${m.timezone} · 抽样规则编号 ${m.sample_seed}。本版保留 ${n(m.source_selected_rows)} 条源记录；当前筛选 ${n(o.impressions)} 次有效曝光。${window.STATIC_SNAPSHOT?'当前为静态结果预览，筛选需启动本地分析服务。':''}`;
  const cards=[['样本曝光量',n(o.impressions),'有效曝光记录数'],['样本点击量',n(o.clicks),`点击用户 ${n(o.clicked_users)} 人`],['样本点击率',pct(o.ctr),`用户点击比例 ${pct(o.user_click_rate)}`],['样本触达用户',n(o.reached_users),`人均曝光 ${fixed(o.avg_impressions_per_user)} 次 · 广告单元 ${n(o.exposed_ads)} 个`]];
  el('cards').innerHTML=cards.map(c=>`<div class="card"><small>${c[0]}</small><strong>${c[1]}</strong><div class="sub">${c[2]}</div></div>`).join('');
  trend(d.daily);hours(d.hourly);bars(d.resources,'resources','resource');bars(d.audience,'audience','age');rank(d.ranking);cross(d.cross);insights(d);visuals(d);

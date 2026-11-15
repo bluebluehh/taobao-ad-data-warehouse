@@ -52,7 +52,7 @@ flowchart TD
 
 ## 事实表与追溯
 
-dwd_exposure包含source_line、user_sk、ad_sk、date_key、hour_key、pid、event_ts、impression_count、click_count。source_line是当前固定来源文件中的物理行号（首个数据行为2），结合数据版本和源文件SHA-256追溯；不是业务事件天然主键。一个数据库只容纳一个曝光来源版本；源文件清单保留名称、哈希及行数。
+dwd_exposure包含source_line、user_sk、ad_sk、date_key、hour_key、pid、event_ts、impression_count、click_count。source_line是当前固定来源文件中的物理行号（首个数据行为2），结合数据版本和源文件SHA-256追溯；不是业务事件天然主键。一个数据库只容纳一个曝光来源版本；源文件清单保留名称、校验值及行数。
 
 外键约束、源记录键唯一性和维度键唯一性共同防止关联膨胀。缺失画像使用可区分的占位用户；其曝光计入总量，profile_matched=0。业务ID仍从维度获取，用于精确UV。标签异常及格式异常进入异常表，不进入DWD。
 

@@ -17,5 +17,3 @@
 | [连接排查](09_dashboard_troubleshooting.md) | 启动、自检与故障 |
 
 历史文档保留形成时的状态；最新进展以当前状态和后续推进记录为准，不把历史检查日期改写为新验收日期。本机output生成文件不提交，仓库examples目录提供必要汇总快照与检查证据。
-
-[GitHub发布记录与操作入口](11_github_publication.md)

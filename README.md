@@ -93,7 +93,3 @@ python -m warehouse.export_preview
 数据：[阿里云天池](https://tianchi.aliyun.com/dataset/56)。字段参考：[厦大数据库实验室案例](https://dblab.xmu.edu.cn/blog/5589/)。学习方法见[参考记录](docs/08_reference_methods.md)。
 
 仓库仅附项目代码、原创说明及必要汇总结果，不附原始数据、课程模板或第三方学习文档。数据与参考材料权利归原权利人，本仓库不额外授予其再分发许可。
-
-## GitHub发布
-
-仓库地址：https://github.com/bluebluehh/taobao-ad-data-warehouse 。首次发布准备情况见[发布记录](docs/11_github_publication.md)。本机可双击scripts/publish_github.cmd执行检查、提交和推送；是否上传成功以Git输出与远端文件为准。

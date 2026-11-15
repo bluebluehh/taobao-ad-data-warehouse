@@ -33,7 +33,7 @@ if errorlevel 1 goto :failed
 :push
 echo Uploading commit to GitHub. If sign-in opens, complete the normal GitHub login.
 echo Network stalls will stop after about 45 seconds of very low transfer speed.
-git -c http.lowSpeedLimit=1 -c http.lowSpeedTime=45 push --progress -u origin main
+python scripts/push_github.py
 if errorlevel 1 goto :failed
 echo.
 echo SUCCESS: https://github.com/bluebluehh/taobao-ad-data-warehouse

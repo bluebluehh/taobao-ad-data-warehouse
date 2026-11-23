@@ -1,0 +1,18 @@
+[Unit]
+Description=Taobao warehouse isolated MySQL reporting instance (3307)
+
+[Service]
+Type=simple
+WorkingDirectory=/home/student/taobao-ad-warehouse
+ExecStart=/bin/bash /home/student/taobao-ad-warehouse/scripts/platform/mysql_reporting.sh start
+ExecStartPost=/usr/bin/python3 /home/student/taobao-ad-warehouse/scripts/platform/wait_reporting_mysql.py
+ExecStop=/usr/bin/mysql --defaults-file=/opt/taobao/data/reporting/admin.cnf -e SHUTDOWN
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=60
+TimeoutStopSec=60
+StandardOutput=append:/home/student/taobao-ad-warehouse/output/platform_checks/next-stage/mysql-user-service.log
+StandardError=append:/home/student/taobao-ad-warehouse/output/platform_checks/next-stage/mysql-user-service.log
+
+[Install]
+WantedBy=default.target

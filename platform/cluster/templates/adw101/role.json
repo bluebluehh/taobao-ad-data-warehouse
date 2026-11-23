@@ -1,0 +1,12 @@
+{
+  "hostname": "adw101",
+  "services": [
+    "DataNode",
+    "NodeManager",
+    "NameNode",
+    "ResourceManager",
+    "HiveServer2",
+    "Hive metastore database"
+  ],
+  "status": "template_not_deployed"
+}

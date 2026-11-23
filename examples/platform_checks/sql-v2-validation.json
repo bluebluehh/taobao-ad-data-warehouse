@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-23",
+  "sql_revision": 2,
+  "technical_validation": true,
+  "source": "17-row synthetic fixture",
+  "namespace": "validation_sql_v2",
+  "batch": "regression_v2_01",
+  "source_exposures": 17,
+  "valid_exposures": 9,
+  "rejected_exposures": 8,
+  "same_batch_rerun_passed": true,
+  "tool_tests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "overview": {
+    "impressions": 9,
+    "clicks": 4,
+    "ctr": 0.4444444444444444,
+    "reached_users": 4,
+    "clicked_users": 3,
+    "ad_units": 3,
+    "user_click_ratio": 0.75,
+    "impressions_per_user": 2.25
+  },
+  "quality": {
+    "impressions": 9,
+    "matched_profile_impressions": 7,
+    "reached_users": 4,
+    "matched_profile_users": 2,
+    "matched_ad_impressions": 7,
+    "gender_missing": 3,
+    "age_missing": 0,
+    "shopping_missing": 0,
+    "pvalue_missing": 3,
+    "occupation_missing": 0,
+    "city_missing": 3,
+    "profile_row_coverage": 0.7777777777777778,
+    "profile_user_coverage": 0.5,
+    "ad_row_coverage": 0.7777777777777778,
+    "gender_missing_rate": 0.42857142857142855,
+    "age_missing_rate": 0.0,
+    "shopping_missing_rate": 0.0,
+    "pvalue_missing_rate": 0.42857142857142855,
+    "occupation_missing_rate": 0.0,
+    "city_missing_rate": 0.42857142857142855
+  },
+  "hive_boundary_cases": [
+    "inclusive_dates",
+    "outside_period_rejected",
+    "empty_counts_zero_rates_null",
+    "zero_click",
+    "all_profiles_unmatched",
+    "matched_attribute_missing",
+    "portrait_filter_keeps_quality_S0",
+    "multi_day_exact_distinct",
+    "top_n_full_denominator",
+    "ctr_threshold",
+    "ctr_default_threshold"
+  ],
+  "reconciliation_defects_detected": [
+    "entire_city_axis_missing",
+    "ctr_null",
+    "duplicate_axis_rows"
+  ],
+  "corruption_assertion_blocked": true,
+  "expected_negative_exit_code": 2,
+  "daily_datax_export": {
+    "daily_overview": {
+      "rows": 5,
+      "all_fields_reconciled": true
+    },
+    "daily_axis": {
+      "rows": 98,
+      "all_fields_reconciled": true
+    },
+    "daily_quality": {
+      "rows": 5,
+      "all_fields_reconciled": true
+    }
+  },
+  "exact_scope_mysql_publication": {
+    "published": true,
+    "database": "taobao_reports_validation",
+    "request_id": "fe9bc0aa66c679448392203f9fa28f541ccfb616c3903a2217f5e93ba16ce5ce"
+  },
+  "native_dashboard": {
+    "browser_verified": true,
+    "chart_count": 4,
+    "screenshot": "output/metric-query-_rm2hr5f/dashboard.png"
+  },
+  "not_verified": [
+    "real_csv_full_scale",
+    "three_node_cluster_runtime",
+    "clones_updated",
+    "github_push"
+  ],
+  "evidence": [
+    "output/batch-9j7ez43f/run.log",
+    "output/sql-audit/v2-boundary-regression.log",
+    "output/report-export-kl0g5jnq/success.json",
+    "output/metric-query-_rm2hr5f/result.json",
+    "output/metric-query-_rm2hr5f/dashboard.json"
+  ],
+  "duplicate_dimension_guard": {
+    "batch": "duplicate_dims_v2",
+    "beeline_exit_code": 2,
+    "assertion_failed_as_expected": true,
+    "success_receipt_created": false,
+    "log": "output/batch-bawkjyr2/run.log"
+  }
+}

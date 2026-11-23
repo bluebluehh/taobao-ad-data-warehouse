@@ -1,0 +1,15 @@
+{
+  "node": "adw103",
+  "roles": [
+    "datanode",
+    "nodemanager"
+  ],
+  "configuration_xml": "passed",
+  "systemd_unit_validation": "passed",
+  "offline_start_guards": "passed",
+  "local_mapreduce_pi": "passed",
+  "services": "Id=taobao-datanode.service\nActiveState=inactive\nUnitFileState=disabled\n\nId=taobao-nodemanager.service\nActiveState=inactive\nUnitFileState=disabled\n",
+  "hdfs": "not_initialized",
+  "cluster_network": "not_yet_validated",
+  "memory_budget": "provisional"
+}

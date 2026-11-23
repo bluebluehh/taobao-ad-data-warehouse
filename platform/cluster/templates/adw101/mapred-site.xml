@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>mapreduce.application.classpath</name>
+    <value>/opt/taobao/module/hadoop-3.3.6/share/hadoop/mapreduce/*,/opt/taobao/module/hadoop-3.3.6/share/hadoop/mapreduce/lib/*</value>
+  </property>
+</configuration>

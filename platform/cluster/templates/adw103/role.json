@@ -1,0 +1,8 @@
+{
+  "hostname": "adw103",
+  "services": [
+    "DataNode",
+    "NodeManager"
+  ],
+  "status": "template_not_deployed"
+}

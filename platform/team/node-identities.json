@@ -1,0 +1,17 @@
+{
+  "adw101": {
+    "machine_id": "3157d0a1eca94edb8e9db7bc0aaf4d5c",
+    "ssh_ed25519": "AAAAC3NzaC1lZDI1NTE5AAAAIJrKU53wXHluicvu4NCtFB5lmKr63OEu/QkFibB4dFJc",
+    "fingerprint": "SHA256:5vjR7uZveocv+g/SxLa/B7Rdg0skMdPUTE7N4QMQ4rQ"
+  },
+  "adw102": {
+    "machine_id": "e7d7c43a4c3549d2b0728ddc6c317a0e",
+    "ssh_ed25519": "AAAAC3NzaC1lZDI1NTE5AAAAIA8cGslI31Ic8wmCOU8bEE8YxPtlZj/LOROC+39UA7bA",
+    "fingerprint": "SHA256:daiN9PeiNmzdtnKFCWg8caQXcD6mWmSQmMCs069hxTo"
+  },
+  "adw103": {
+    "machine_id": "a76e7e25479841efa5924639c0e4e4fa",
+    "ssh_ed25519": "AAAAC3NzaC1lZDI1NTE5AAAAIAPdcTxRSdXcVWL4kxGhOnBWQ+uKYuKxfNAkM5fsVMaC",
+    "fingerprint": "SHA256:4QKzE0aL9+KXXKsC6bvsM1LrH2A6fs+dGEYYzQlDgeY"
+  }
+}

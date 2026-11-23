@@ -1,0 +1,23 @@
+{
+  "node": "adw101",
+  "mysql_version": "8.0.46-0ubuntu0.24.04.5",
+  "mysql_port": 3307,
+  "hive_schema_version": "4.0.0",
+  "hive_tables": 0,
+  "superset_admin_api_login": "passed",
+  "scheduler_admin_api_login": "passed",
+  "scheduler_workflows": 0,
+  "hdfs": "not_initialized",
+  "cluster_network": "not_yet_validated",
+  "real_data_analysis": "not_started",
+  "database_restart_recheck": "passed",
+  "application_restart_api_logins": "passed",
+  "network_gate_refusal": "passed",
+  "datax": {
+    "kind": "synthetic_stream_check",
+    "rows": 3,
+    "errors": 0
+  },
+  "final_services": "Id=taobao-node-mysql.service\nActiveState=active\nUnitFileState=disabled\n\nId=taobao-superset.service\nActiveState=inactive\nUnitFileState=disabled\n\nId=taobao-dolphinscheduler.service\nActiveState=inactive\nUnitFileState=disabled\n",
+  "scheduler_shutdown_note": "Requested stop returned Java exit 143; configured SuccessExitStatus=143 and reset historical failed status."
+}

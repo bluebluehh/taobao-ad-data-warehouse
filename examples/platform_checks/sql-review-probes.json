@@ -1,0 +1,9 @@
+{
+  "review_type": "static_SQL_review_and_two_component_probes",
+  "real_csv_available": false,
+  "full_Hive_pipeline_reexecuted": false,
+  "documented_trailing_space_header": "rejected_by_current_loader_using_synthetic_file",
+  "hive_4_0_1_empty_SUM": "NULL_confirmed_with_actual_aggregate_implementation",
+  "business_SQL_modified": false,
+  "details": "docs/19_sql_requirements_review.md"
+}

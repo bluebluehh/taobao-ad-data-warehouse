@@ -92,3 +92,17 @@
 ## 2026-11-15 文档用语简化
 
 根据用户要求，抽样说明统一改为“按固定规则抽取约2%的曝光数据，重复运行可得到相同样本”。核对结果和特殊情况检查直接说明具体内容。仅调整说明文字，不修改抽样程序、指标公式或历史检查结果。
+
+## 2026-11-19 SSH连接实测
+
+- 目标为student@192.168.109.128；现有Windows SSH配置已经包含主机地址和用户名。
+- 当前执行环境CODEX_SANDBOX_NETWORK_DISABLED=1。用户配置文件虽然设置workspace-write及network_access=true，实际会话仍受网络限制；未修改权限或尝试绕过限制。
+- 使用Windows OpenSSH及BatchMode、8秒连接超时实测，TCP连接阶段立即返回“connect to address 192.168.109.128 port 22: Permission denied”，尚未进入主机密钥、密码或公钥认证阶段。不能据此断定服务器SSH服务或密码有问题。
+- 现有2026-11-19沙箱日志记录Windows sandbox selection: mxc；该记录本身不能证明具体哪项策略导致禁网。
+- 桌面端list_projects接口重试一次后仍返回Codex app tool request failed，未取得远程项目列表。
+- 本次没有连上Ubuntu，没有安装远程Codex、设置代理或改动数仓服务。后续需用户在桌面端检查Connections中的SSH入口，并在普通PowerShell验证目标主机连接，才能继续区分本地会话限制与主机连接问题。
+
+
+## 2026-11-23 adw101真实数据本地预检
+
+用户授权直接SSH接手adw101后，按固定主机公钥和machine-id核实节点身份。真实三表完成全量整理；代理复核全部源/TSV哈希、维度唯一性、曝光有效性、日期分布、精确去重及关联覆盖。预检成功，完整计数及限制见第20份指南及examples/platform_checks/adw101-real-source-preflight.json。两端28项本地工具测试通过，adw101报表结构升级复核成功。Tailscale现场为NeedsLogin；另两台尚未联机，因此未执行三节点加工或真实数据入仓验收。原CSV留在adw101，旧开发机HDFS未修改。

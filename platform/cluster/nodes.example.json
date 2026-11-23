@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    {"name": "adw101", "address": "CHANGE_ME_NODE1", "yarn_memory_mb": 1024},
+    {"name": "adw102", "address": "CHANGE_ME_NODE2", "yarn_memory_mb": 2048},
+    {"name": "adw103", "address": "CHANGE_ME_NODE3", "yarn_memory_mb": 2048}
+  ]
+}

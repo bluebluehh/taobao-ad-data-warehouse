@@ -1,0 +1,92 @@
+{
+  "scope": "full_csv_local_preflight",
+  "cluster_verified": false,
+  "warehouse_real_data_accepted": false,
+  "technical_validation": false,
+  "business_period": {
+    "start_date": "2017-05-06",
+    "end_date": "2017-05-13",
+    "timezone": "Asia/Shanghai"
+  },
+  "integrity": {
+    "raw_sample.csv": {
+      "source_sha256": "aad792d63b81b5b7788f91e35364975b83ce3fdb923009fdfb6f798545d2b93d",
+      "staged_sha256": "56e21dcee9d7bea6c75284139d3fa237599f7c0f50f29b39317813a14ab00039",
+      "verified": true
+    },
+    "ad_feature.csv": {
+      "source_sha256": "358a298178a6286196b82fe151024c63f4b081cf7685f1ebf8ff4da776e3c745",
+      "staged_sha256": "119fa6d43c3182dbef93f8d0a870da28d50d5765689367877f7aa3c5c435df78",
+      "verified": true
+    },
+    "user_profile.csv": {
+      "source_sha256": "63355e02e302768d79db658e0f25498f368b4b5e037318bc67973835380a0532",
+      "staged_sha256": "d4906b5aa1f5e5398f8325d5d20dca8cbf99604b6fd8e708998ba1da38359c1b",
+      "verified": true
+    }
+  },
+  "dimensions": {
+    "ad_feature": {
+      "rows": 846811,
+      "empty_keys": 0,
+      "duplicate_key_rows": 0,
+      "unique_nonempty_keys": 846811,
+      "source_attribute_missing_rows": {}
+    },
+    "user_profile": {
+      "rows": 1061768,
+      "empty_keys": 0,
+      "duplicate_key_rows": 0,
+      "unique_nonempty_keys": 1061768,
+      "source_attribute_missing_rows": {
+        "final_gender_code": 0,
+        "age_level": 0,
+        "shopping_level": 0,
+        "pvalue_level": 575917,
+        "occupation": 0,
+        "new_user_class_level": 344920
+      }
+    }
+  },
+  "counts": {
+    "source_rows": 26557961,
+    "valid_rows": 26557961,
+    "clicks": 1366056,
+    "matched_ad_exposures": 26557961,
+    "matched_profile_exposures": 25029435,
+    "reached_users": 1141729,
+    "clicked_users": 491647,
+    "exposed_ads": 846811,
+    "matched_profile_users": 1061768
+  },
+  "rejected_by_reason": {},
+  "date_rows": {
+    "2017-05-06": 3270348,
+    "2017-05-07": 3430002,
+    "2017-05-08": 3354523,
+    "2017-05-09": 3248016,
+    "2017-05-10": 3333752,
+    "2017-05-11": 3378604,
+    "2017-05-12": 3234051,
+    "2017-05-13": 3308665
+  },
+  "matched_profile_attribute_missing_exposures": {
+    "final_gender_code": 0,
+    "age_level": 0,
+    "shopping_level": 0,
+    "pvalue_level": 13024272,
+    "occupation": 0,
+    "new_user_class_level": 6696303
+  },
+  "local_preflight_passed": true,
+  "elapsed_seconds": 630.66,
+  "limitations": [
+    "No Hive/Tez execution",
+    "No whole-row duplicate detection",
+    "No source-side Windows hash comparison",
+    "No business conclusions or cluster acceptance"
+  ],
+  "execution_node": "adw101",
+  "checked_date": "2026-11-23",
+  "runtime_evidence": "adw101:output/real-source-audit-20261123/audit.json"
+}

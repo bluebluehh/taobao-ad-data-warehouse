@@ -1,0 +1,16 @@
+# Critical runtime versions from Apache Superset 6.1.0 requirements/base.txt.
+# Source: https://raw.githubusercontent.com/apache/superset/6.1.0/requirements/base.txt
+# This is a runtime subset, not a copy of the complete upstream dependency lock.
+flask==2.3.3
+flask-appbuilder==5.0.2
+flask-babel==3.1.0
+flask-caching==2.3.1
+cachelib==0.13.0
+flask-sqlalchemy==2.5.1
+flask-limiter==3.12
+flask-wtf==1.2.2
+flask-cors==6.0.2
+flask-jwt-extended==4.7.1
+celery==5.5.2
+gunicorn==23.0.0
+cachetools==6.2.1

@@ -1,0 +1,23 @@
+{
+  "guest_preparation": "passed_for_all_three_nodes",
+  "temporary_setup_authorization": "revoked_and_new_connections_denied_on_all_nodes",
+  "nodes": [
+    {
+      "node": "adw101",
+      "state": "guest_prepared_for_shutdown_and_archive"
+    },
+    {
+      "node": "adw102",
+      "state": "guest_prepared_for_shutdown_and_archive"
+    },
+    {
+      "node": "adw103",
+      "state": "guest_prepared_for_shutdown_and_archive"
+    }
+  ],
+  "windows_archives": "not_created_or_verified",
+  "distribution": "not_confirmed",
+  "cluster_network": "not_yet_validated",
+  "hdfs": "not_initialized",
+  "real_data_analysis": "not_started"
+}

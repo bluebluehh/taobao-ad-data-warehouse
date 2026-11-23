@@ -1,0 +1,18 @@
+[Unit]
+Description=Taobao warehouse Superset local reporting service
+Requires=taobao-report-mysql.service
+After=taobao-report-mysql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/student/taobao-ad-warehouse
+ExecStart=/bin/bash /home/student/taobao-ad-warehouse/scripts/platform/superset.sh start
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+KillSignal=SIGTERM
+StandardOutput=append:/home/student/taobao-ad-warehouse/output/platform_checks/next-stage/superset-user-service.log
+StandardError=append:/home/student/taobao-ad-warehouse/output/platform_checks/next-stage/superset-user-service.log
+
+[Install]
+WantedBy=default.target

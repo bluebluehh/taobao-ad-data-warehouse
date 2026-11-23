@@ -1,0 +1,15 @@
+[Unit]
+Description=Taobao adw101 private MySQL metadata instance
+
+[Service]
+Type=simple
+WorkingDirectory=/home/student/taobao-ad-warehouse
+ExecStart=/bin/bash /home/student/taobao-ad-warehouse/scripts/platform/mysql_reporting.sh start
+ExecStartPost=/usr/bin/python3 /home/student/taobao-ad-warehouse/scripts/platform/node_mysql.py bootstrap
+ExecStop=/usr/bin/python3 /home/student/taobao-ad-warehouse/scripts/platform/node_mysql.py shutdown
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+
+[Install]
+WantedBy=default.target

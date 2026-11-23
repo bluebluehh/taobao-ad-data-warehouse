@@ -25,3 +25,26 @@ __pycache__/
 *.key
 node_modules/
 .venv/
+
+# Formal platform configuration (credentials stay outside the repository).
+!/platform/
+
+# Machine-local addresses, credentials, virtual machines and binary installers.
+/platform/team/nodes.json
+credentials*.json
+*-login.txt
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+*.vmdk
+*.vmx
+*.vmem
+*.vmsn
+*.vmsd
+*.nvram
+*.7z
+*.rar
+*.tgz
+*.deb
+*.jar
